@@ -1,0 +1,86 @@
+
+.array-bar {
+  width: 2px;
+  display: inline-block;
+  margin: 0 1px;
+}
+
+.headerShit {
+  height: 100px;
+  width: 100%;
+  background: #282c34;
+
+}
+
+.graphShit {
+  padding: 25px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 50%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #42afae;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.headLable {
+  font-weight: 700;
+  color: #45A29E;
+  padding-right: 5px;
+}
+
+.btn-head {
+  display: inline-block;
+  font-weight: 700;
+  color: #45A29E;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  user-select: none;
+  background-color: #C5C6C7;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.somePadding {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.somePaddingTop {
+  padding-top: 20px;
+}
+
+.alignLeft {
+  text-align: left;
+}
+
+.paddingRight {
+  padding-left: 10px;
+}
