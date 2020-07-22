@@ -29,6 +29,38 @@ export function getBubbleSortAnimation(a) {
   return animations;
 }
 
+export function getSelectionSortAnimation(a) {
+  const animation = [];
+  var n = a.length;
+  for (var i = 0; i < n; i++) {
+    var iMin = i;
+    for (var j = i; j < n; j++) {
+      if (a[j] < a[iMin]) {
+        iMin = j;
+      }
+    }
+    if (iMin !== i) {
+      swap(a, iMin, i, animation);
+    }
+  }
+
+  return animation;
+}
+
+export function getInsertionSortAnimation(a) {
+  const animation = [];
+  var n = a.length;
+  for (var i = 1; i < n; i++) {
+    var j = i;
+    while (j > 0 && a[j] < a[j - 1]) {
+      swap(a, j, j - 1, animation);
+      j = j - 1;
+    }
+  }
+
+  return animation;
+}
+
 function mergeSortHelper(
   mainArray,
   startIdx,

@@ -1,5 +1,10 @@
 import React from 'react';
-import {getQuickSortAnimation, getBubbleSortAnimation, getMergeSortAnimations} from '../SortAlgo/SortAlgo';
+import {
+  getQuickSortAnimation,
+  getBubbleSortAnimation,
+  getMergeSortAnimations,
+  getSelectionSortAnimation, getInsertionSortAnimation
+} from '../SortAlgo/SortAlgo';
 import Button from 'react-bootstrap/Button';
 // import ReactBootstrapSlider from 'react-bootstrap-slider';
 
@@ -96,15 +101,11 @@ export default class SortingVisualizer extends React.Component {
   bubbleSort() {
     const animations = getBubbleSortAnimation(this.state.array);
     for (let i = 0; i < animations.length; i++) {
-
       const isColorChange = i % 2;
-
       const arrayBars = document.getElementsByClassName('array-bar');
       const [barOneIdx, barTwoIdx] = animations[i];
       const barOneStyle = arrayBars[barOneIdx].style;
       const barTwoStyle = arrayBars[barTwoIdx].style;
-
-
       if (isColorChange === 0) {
         setTimeout(() => {
           barOneStyle.backgroundColor = SECONDARY_COLOR;
@@ -112,7 +113,6 @@ export default class SortingVisualizer extends React.Component {
         }, i * ANIMATION_SPEED_MS);
 
       }
-
       else {
         setTimeout(() => {
           const tempStyle = barOneStyle.height;
@@ -126,6 +126,68 @@ export default class SortingVisualizer extends React.Component {
 
 
     }
+  }
+
+  insertionSort() {
+    const animations = getInsertionSortAnimation(this.state.array);
+    for (let i = 0; i < animations.length; i++) {
+      const isColorChange = i % 2;
+      const arrayBars = document.getElementsByClassName('array-bar');
+      const [barOneIdx, barTwoIdx] = animations[i];
+      const barOneStyle = arrayBars[barOneIdx].style;
+      const barTwoStyle = arrayBars[barTwoIdx].style;
+      if (isColorChange === 0) {
+        setTimeout(() => {
+          barOneStyle.backgroundColor = SECONDARY_COLOR;
+          barTwoStyle.backgroundColor = SECONDARY_COLOR;
+        }, i * ANIMATION_SPEED_MS);
+
+      }
+      else {
+        setTimeout(() => {
+          const tempStyle = barOneStyle.height;
+          barOneStyle.height = barTwoStyle.height;
+          barTwoStyle.height = tempStyle;
+          barOneStyle.backgroundColor = PRIMARY_COLOR;
+          barTwoStyle.backgroundColor = PRIMARY_COLOR;
+        }, i * ANIMATION_SPEED_MS)
+
+      }
+
+
+    }
+  }
+
+
+  selectionSort() {
+    const animations = getSelectionSortAnimation(this.state.array);
+    for (let i = 0; i < animations.length; i++) {
+      const isColorChange = i % 2;
+      const arrayBars = document.getElementsByClassName('array-bar');
+      const [barOneIdx, barTwoIdx] = animations[i];
+      const barOneStyle = arrayBars[barOneIdx].style;
+      const barTwoStyle = arrayBars[barTwoIdx].style;
+      if (isColorChange === 0) {
+        setTimeout(() => {
+          barOneStyle.backgroundColor = SECONDARY_COLOR;
+          barTwoStyle.backgroundColor = SECONDARY_COLOR;
+        }, i * ANIMATION_SPEED_MS);
+
+      }
+      else {
+        setTimeout(() => {
+          const tempStyle = barOneStyle.height;
+          barOneStyle.height = barTwoStyle.height;
+          barTwoStyle.height = tempStyle;
+          barOneStyle.backgroundColor = PRIMARY_COLOR;
+          barTwoStyle.backgroundColor = PRIMARY_COLOR;
+        }, i * ANIMATION_SPEED_MS)
+
+      }
+
+
+    }
+
   }
 
   testSortingAlgorithms() {
@@ -185,6 +247,10 @@ export default class SortingVisualizer extends React.Component {
                                                       onClick={() => this.quickSort()}>Quick Sort</button> </span>
                 <span className="somePadding"><button className="btn-head"
                                                       onClick={() => this.bubbleSort()}>Bubble Sort</button></span>
+                <span className="somePadding"><button className="btn-head"
+                                                      onClick={() => this.selectionSort()}> Selection Sort </button></span>
+                <span className="somePadding"><button className="btn-head"
+                                                      onClick={() => this.insertionSort()}> Insertion Sort </button></span>
               </div>
             </div>
             <div className="col-4 somePaddingTop alignLeft">
