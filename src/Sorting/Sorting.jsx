@@ -231,7 +231,7 @@ export default class SortingVisualizer extends React.Component {
     return (
       <div>
 
-        <div className="headerShit">
+        <div className="blackHeader">
           <div className="row">
             <div className="col-3">
               <div className="somePaddingTop">
@@ -240,17 +240,21 @@ export default class SortingVisualizer extends React.Component {
               </div>
             </div>
             <div className="col-5">
-              <div className="somePaddingTop">
+              <div class=" row">
+                <div className="somePaddingTop col-12">
                 <span className="somePadding"> <button className="btn-head"
                                                        onClick={() => this.mergeSort()}>Merge Sort</button> </span>
-                <span className="somePadding"><button className="btn-head"
-                                                      onClick={() => this.quickSort()}>Quick Sort</button> </span>
-                <span className="somePadding"><button className="btn-head"
-                                                      onClick={() => this.bubbleSort()}>Bubble Sort</button></span>
-                <span className="somePadding"><button className="btn-head"
-                                                      onClick={() => this.selectionSort()}> Selection Sort </button></span>
-                <span className="somePadding"><button className="btn-head"
-                                                      onClick={() => this.insertionSort()}> Insertion Sort </button></span>
+                  <span className="somePadding"><button className="btn-head"
+                                                        onClick={() => this.quickSort()}>Quick Sort</button> </span>
+                  <span className="somePadding"><button className="btn-head"
+                                                        onClick={() => this.bubbleSort()}>Bubble Sort</button></span>
+                </div>
+                <div class="col-12 pt-3">
+                  <span className="somePadding"><button className="btn-head"
+                                                        onClick={() => this.selectionSort()}> Selection Sort </button></span>
+                  <span className="somePadding"><button className="btn-head"
+                                                        onClick={() => this.insertionSort()}> Insertion Sort </button></span>
+                </div>
               </div>
             </div>
             <div className="col-4 somePaddingTop alignLeft">
@@ -286,7 +290,7 @@ export default class SortingVisualizer extends React.Component {
         </div>
 
 
-        <div className="graphShit">
+        <div className="graph">
 
           {array.map((value, idx) => (
             <div

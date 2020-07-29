@@ -5,14 +5,14 @@
   margin: 0 1px;
 }
 
-.headerShit {
-  height: 100px;
+.blackHeader {
+  height: 150px;
   width: 100%;
   background: #282c34;
 
 }
 
-.graphShit {
+.graph {
   padding: 25px;
 }
 
